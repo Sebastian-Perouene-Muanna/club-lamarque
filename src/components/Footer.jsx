@@ -28,7 +28,7 @@ export default function Footer() {
       {/* Logo institucional */}
       <div className="flex justify-center my-6">
         <img
-          src="/club-lamarque/esc/escudo22.png"
+          src="/club-lamarque/esc/escudo11.png"
           alt="Logo Club Atlético Lamarque"
           className="h-40 w-auto"
         />

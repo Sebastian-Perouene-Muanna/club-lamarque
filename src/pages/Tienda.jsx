@@ -5,70 +5,42 @@ const productos = [
     id: 1,
     nombre: "Camiseta Oficial de Fútbol",
     descripcion: "Camiseta titular del Club Atlético Lamarque, edición 2024.",
-    imagen: "/tienda/camiseta.png",
+    imagen: "/club-lamarque/tienda/camiseta.png",
     precio: 8500,
   },
   {
     id: 2,
     nombre: "Short de Entrenamiento",
     descripcion: "Short azul con escudo del club, tela deportiva.",
-    imagen: "/tienda/short.png",
+    imagen: "/club-lamarque/tienda/short.png",
     precio: 4800,
   },
   {
     id: 3,
     nombre: "Campera Rompeviento",
     descripcion: "Campera impermeable azulgrana, edición invierno 2024.",
-    imagen: "https://via.placeholder.com/400x300?text=Campera",
+    imagen: "/club-lamarque/tienda/campera.png",
     precio: 11200,
   },
   {
     id: 4,
-    nombre: "Botines Profesionales",
-    descripcion: "Botines Puma EvoSpeed para césped natural.",
-    imagen: "https://via.placeholder.com/400x300?text=Botines",
-    precio: 13500,
-  },
-  {
-    id: 5,
-    nombre: "Pelota Oficial Fútbol 5",
-    descripcion: "Balón número 5 de alta competición.",
-    imagen: "https://via.placeholder.com/400x300?text=Pelota+Fútbol",
-    precio: 6200,
-  },
-  {
-    id: 6,
     nombre: "Rodilleras de Vóley",
     descripcion: "Protección de alta absorción para jugadores de vóley.",
-    imagen: "https://via.placeholder.com/400x300?text=Rodilleras+Vóley",
+    imagen: "/club-lamarque/tienda/rodilleras.png",
     precio: 3100,
   },
   {
-    id: 7,
-    nombre: "Pelota de Básquet Oficial",
-    descripcion: "Molten G7X Indoor/Outdoor Basketball.",
-    imagen: "https://via.placeholder.com/400x300?text=Pelota+Básquet",
-    precio: 7900,
-  },
-  {
-    id: 8,
-    nombre: "Raqueta de Tenis",
-    descripcion: "Wilson Ultra 100 para adultos profesionales.",
-    imagen: "https://via.placeholder.com/400x300?text=Raqueta+Tenis",
-    precio: 21500,
-  },
-  {
-    id: 9,
+    id: 5,
     nombre: "Gorra de Entrenamiento",
     descripcion: "Gorra ligera ideal para actividades al aire libre.",
-    imagen: "https://via.placeholder.com/400x300?text=Gorra",
+    imagen: "/club-lamarque/tienda/gorra.png",
     precio: 2200,
   },
   {
-    id: 10,
+    id: 6,
     nombre: "Mochila Deportiva CAL",
     descripcion: "Mochila azulgrana con el escudo bordado del club.",
-    imagen: "https://via.placeholder.com/400x300?text=Mochila+Deportiva",
+    imagen: "/club-lamarque/tienda/mochila.png",
     precio: 6800,
   },
 ];
@@ -95,7 +67,7 @@ export default function Tienda() {
       </h2>
 
       <div className="grid md:grid-cols-3 gap-8">
-        
+
         {/* Productos */}
         <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
           {productos.map((producto) => (
@@ -103,11 +75,13 @@ export default function Tienda() {
               key={producto.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
             >
-              <img
-                src={producto.imagen}
-                alt={producto.nombre}
-                className="w-full h-52 object-cover"
-              />
+              <div className="bg-white w-full h-52 flex justify-center items-center">
+                <img
+                  src={producto.imagen}
+                  alt={producto.nombre}
+                  className="h-40 object-contain"
+                />
+              </div>
               <div className="p-5 space-y-3">
                 <h3 className="text-xl font-bold text-azulgrana-rojo">{producto.nombre}</h3>
                 <p className="text-gray-600 text-sm">{producto.descripcion}</p>
@@ -158,7 +132,6 @@ export default function Tienda() {
             </div>
           )}
         </div>
-
       </div>
     </div>
   );
