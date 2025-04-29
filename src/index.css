@@ -1,0 +1,88 @@
+
+@import 'keen-slider/keen-slider.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-navbar-humo {
+  background-image: url('/humo4.png'); /* nombre del archivo en /public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+/* Animaciones para íconos sociales al hacer hover */
+.icon-facebook:hover {
+  color: #1877F2;
+  transition: color 0.3s ease-in-out;
+}
+
+.icon-instagram:hover {
+  color: #E1306C;
+  transition: color 0.3s ease-in-out;
+}
+
+.icon-youtube:hover {
+  color: #FF0000;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Estilo base por si querés personalizar todos los íconos sociales */
+.social-icon {
+  transition: color 0.3s ease-in-out;
+  color: white;
+}
+
+/* Keen slider básico (ya viene con su propio CSS importado) */
+/* Extra: si querés suavizar el scroll automático */
+.keen-slider {
+  will-change: transform;
+}
+
+/* Si querés personalizar los slides individualmente */
+.keen-slider__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@keyframes scroll-credits {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -200%;
+  }
+}
+
+.animate-scroll-credits {
+  animation: scroll-credits 30s linear infinite;
+}
+
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
